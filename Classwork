@@ -1,0 +1,55 @@
+int main()
+{
+	int passes = 0; // number of passes
+	int failures = 0; // number of failures
+	int q = 0;
+	int total = 0;
+	int i;
+	int * p;
+	cout << "Enter how many numbers you would like to enter" << endl;
+	cin >> i;
+	p = new (nothrow) int[i];
+	if (p == nullptr)
+		cout << "Error memory could not be allocated";
+	else
+	{
+		for (int n = 0; n < i; n++)
+		{
+			cout << "Enter number (as a % (presentage))" << endl;
+			cin >> p[n];
+
+			if (p[n] >= 50) // if/else nested in while
+				passes = passes + 1;
+			else if (p[n] < 50)
+				failures = failures + 1;
+		}
+	}
+		
+
+	cout << "Passed " << passes << endl;
+	cout << "Failed " << failures << endl;
+	for (int n = 0; n < i; n++)
+	{
+		total = total + p[n];
+		
+		q++;
+		if (total > 100, total < 0)
+			cout << " " << endl;
+		else
+		{
+			total = total / i;
+			cout <<"The avarage is "<< total << endl;
+			cout << q << endl;
+		}
+		delete[] p;
+	}
+	
+
+
+	if (passes > 8)
+		cout << "Decrease the amount of bribes taken " << endl;
+	
+	
+	system("pause");
+	return 0;
+}
